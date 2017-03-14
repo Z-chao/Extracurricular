@@ -56,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
     private void init() {
         manager = getSupportFragmentManager();  //拿到Fragment的管理者
         setTabSelection(0);
-
     }
 
     /**
@@ -120,6 +119,8 @@ public class MainActivity extends AppCompatActivity {
 
                 break;
         }
+
+        transaction.commit();
 
 
     }
