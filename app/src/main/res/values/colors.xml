@@ -6,4 +6,5 @@
 
     <color name="black_overlay">#000000</color>
     <color name="gray">#808080</color>
+    <color name="bottom_menu_btn">#0000</color>
 </resources>

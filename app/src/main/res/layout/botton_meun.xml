@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#f1f1f1" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:orientation="horizontal"
+        >
+
+        <LinearLayout
+            android:id="@+id/ll_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+            <ImageButton
+                android:id="@+id/ib_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/bottom_menu_btn"
+                android:clickable="false"
+                android:src="@mipmap/shouye1"
+                />
+
+            <TextView
+                android:text="首页"
+                android:textColor="@color/black_overlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_huodong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+
+            <ImageButton
+                android:id="@+id/ib_huodong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/bottom_menu_btn"
+                android:clickable="false"
+                android:src="@mipmap/huodong0"
+                />
+
+            <TextView
+                android:text="全部活动"
+                android:textColor="@color/black_overlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_shoucang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+
+            <ImageButton
+                android:id="@+id/ib_shoucang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/bottom_menu_btn"
+                android:clickable="false"
+                android:src="@mipmap/shoucang0"
+                />
+
+            <TextView
+                android:text="我的活动"
+                android:textColor="@color/black_overlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+
+            <ImageButton
+                android:id="@+id/ib_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/bottom_menu_btn"
+                android:clickable="false"
+                android:src="@mipmap/user1"
+                />
+
+            <TextView
+                android:text="账号"
+                android:textColor="@color/black_overlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

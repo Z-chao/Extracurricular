@@ -34,8 +34,8 @@
             android:layout_height="wrap_content">
             <EditText
                 android:id="@+id/ed_userName"
-                android:drawableLeft="@mipmap/aaa"
-                android:drawableStart="@mipmap/aaa"
+                android:drawableLeft="@mipmap/user1"
+                android:drawableStart="@mipmap/user1"
                 android:hint="请输入账号"
                 android:drawablePadding="10dp"
                 android:layout_margin="5dp"
