@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Extracurricular</string>
+    <string name="app_name">课外活动</string>
 
     <string name="title_activity_splash">SplashActivity</string>
     <string name="dummy_button">Dummy Button</string>
