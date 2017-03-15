@@ -58,21 +58,24 @@ public class LoginActivity extends AppCompatActivity {
                 try {
                     Dao dao = helper.getDao(UserBean.class);
                     List<UserBean> account = dao.queryForEq("_account", userNamer);
-                    UserBean userBean = account.get(0);
-                    String passWord1 = userBean.get_passWord();
-                    Log.i("zc", "onClick:      密码-------" + passWord1);
-                    if (TextUtils.isEmpty(userNamer) && TextUtils.isEmpty(passWord)) {
-                        Toast.makeText(this, "用户名或密码不能为空", Toast.LENGTH_SHORT).show();
+                    if (account.size() == 0) {
+                        Toast.makeText(this, "该用户不存在", Toast.LENGTH_SHORT).show();
                     } else {
-                        if ( TextUtils.equals(passWord, passWord1)) {
-                            Intent mainIntent = new Intent(LoginActivity.this, MainActivity.class);
-                            startActivity(mainIntent);
+                        UserBean userBean = account.get(0);
+                        String passWord1 = userBean.get_passWord();
+                        Log.i("zc", "onClick:      密码-------" + passWord1);
+                        if (TextUtils.isEmpty(userNamer) && TextUtils.isEmpty(passWord)) {
+                            Toast.makeText(this, "用户名或密码不能为空", Toast.LENGTH_SHORT).show();
                         } else {
-                            Toast.makeText(this, "用户名或密码错误", Toast.LENGTH_SHORT).show();
+                            if ( TextUtils.equals(passWord, passWord1)) {
+                                Intent mainIntent = new Intent(LoginActivity.this, MainActivity.class);
+                                startActivity(mainIntent);
+                            } else {
+                                Toast.makeText(this, "用户名或密码错误", Toast.LENGTH_SHORT).show();
+                            }
                         }
+                        Log.i("zc", "onClick:                 查询" + account.toString());
                     }
-                    Log.i("zc", "onClick:                 查询" + account.toString());
-
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }

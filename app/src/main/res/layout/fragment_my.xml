@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/ic_launcher"
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+
+
+        <TextView
+            android:layout_marginLeft="15dp"
+            android:gravity="center_vertical"
+            android:text="许桐01022013022"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_marginTop="20dp"
+        android:background="@color/gray"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp" />
+    <TextView
+        android:gravity="center_vertical"
+        android:text=" 更改信息"
+        android:textSize="20sp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+    <View
+        android:background="@color/gray"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp" />
+    <TextView
+        android:gravity="center_vertical"
+        android:text=" 通用"
+        android:textSize="20sp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+    <View
+        android:background="@color/gray"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp" />
+
+    <View
+        android:layout_marginTop="50dp"
+        android:background="@color/gray"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp" />
+    <TextView
+        android:gravity="center_vertical"
+
+        android:text=" 意见反馈"
+        android:textSize="20sp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+    <View
+        android:background="@color/gray"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp" />
+    <TextView
+        android:gravity="center_vertical"
+        android:text=" 设置"
+        android:textSize="20sp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+    <View
+        android:background="@color/gray"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp" />
+
+
+
+</LinearLayout>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+
+
+    <ImageView
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@mipmap/ic_launcher"
+        />
+
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+
+            android:text="排名  :   13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_marginLeft="80dp"
+            android:text="积分  :   48"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_marginTop="30dp"
+        android:background="@color/colorAccent"
+        android:layout_width="wrap_content"
+        android:layout_height="2dp" />
+
+
+
+    <RelativeLayout
+        android:id="@+id/rl_coupons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:button="@null"
+            android:checked="false"
+            android:clickable="false"
+            android:drawablePadding="12dp"
+            android:gravity="center"
+            android:text="我的活动" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="50dp"
+            android:text="全部"
+            android:textColor="@color/gray"
+            android:drawableEnd="@mipmap/right"
+            android:drawableRight="@mipmap/right"
+            android:drawablePadding="20dp"
+             />
+
+
+    </RelativeLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_marginRight="100dp"
+            android:src="@mipmap/aaaa"
+            android:layout_width="60dp"
+            android:layout_height="60dp" />
+
+        <ImageView
+            android:src="@mipmap/aaaa"
+            android:layout_width="60dp"
+            android:layout_height="60dp" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <RadioButton
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:button="@null"
+            android:checked="false"
+            android:clickable="false"
+            android:drawablePadding="12dp"
+            android:gravity="center"
+            android:text="我的消息" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="50dp"
+            android:text="全部"
+            android:textColor="@color/gray"
+            android:drawableEnd="@mipmap/right"
+            android:drawableRight="@mipmap/right"
+            android:drawablePadding="20dp"
+            />
+
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>
