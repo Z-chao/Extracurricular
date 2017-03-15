@@ -53,17 +53,6 @@ public class HomeFragment extends Fragment {
 
     private void initView() {
         //对轮播图进行 数据的填充 和显示
-        /*banner.setAdapter(new BGABanner.Adapter<ImageView,Integer>() {
-            @Override
-            public void fillBannerItem(BGABanner banner, ImageView itemView, Integer model, int position) {
-                Glide.with(HomeFragment.this)
-                        .load(model)
-                        .centerCrop()
-                        .dontAnimate()
-                        .into(itemView);
-            }
-        });*/
-
 
         List<View> views = new ArrayList<>();
         views.add(BGABannerUtil.getItemImageView(getContext(), R.drawable.images));

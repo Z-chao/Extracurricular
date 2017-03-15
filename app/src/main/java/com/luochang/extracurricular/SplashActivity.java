@@ -25,7 +25,8 @@ public class SplashActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_splash2);
         ButterKnife.bind(this);
-
+        DBHelper dbHelper = DBHelper.getHelper(this);
+        dbHelper.getWritableDatabase();
     }
 
     @OnClick({R.id.bt_login, R.id.bt_registered})

@@ -23,4 +23,9 @@ public class ExampleInstrumentedTest {
 
         assertEquals("com.luochang.extracurricular", appContext.getPackageName());
     }
+
+
+
+
+
 }
