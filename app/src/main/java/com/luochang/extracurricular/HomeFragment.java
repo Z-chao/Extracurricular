@@ -1,6 +1,8 @@
 package com.luochang.extracurricular;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -18,6 +20,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemChildClickListener;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.luochang.extracurricular.adapter.HomeAdapter;
+import com.luochang.extracurricular.bean.ActivityFBean;
 import com.luochang.extracurricular.bean.HomeBean;
 
 import java.util.ArrayList;
@@ -76,13 +79,31 @@ public class HomeFragment extends Fragment {
         data.add(new HomeBean("学术类",R.drawable.ic_launcher));
         data.add(new HomeBean("军事类",R.drawable.ic_launcher));
 
+        final List<ActivityFBean> first = new ArrayList<>();
+        ActivityFBean tiyu = new ActivityFBean("体育类", "篮球", "足球", "乒乓球", "游泳");
+        first.add(tiyu);
+        ActivityFBean yishu = new ActivityFBean("艺术类", "摄影", "器乐", "书画", "表演");
+        first.add(yishu);
+        ActivityFBean wenxue = new ActivityFBean("文学类", "演讲与口才", "写作", "极限英语", "电影鉴赏");
+        first.add(wenxue);
+        ActivityFBean chuangxin = new ActivityFBean("创新类", "计算机创新", "电子设计", "航模", "智能车");
+        first.add(chuangxin);
+        ActivityFBean xueshu = new ActivityFBean("学术类", "数学建模", "中国历史", "经济论坛", "国内外军史");
+        first.add(xueshu);
+        ActivityFBean junshi = new ActivityFBean("军事类", "定向越野", "军事沙龙", "射击", "国内外军事分析");
+        first.add(junshi);
+
 
 
         rvHome.setAdapter(new HomeAdapter(R.layout.item_home,data));
         rvHome.addOnItemTouchListener(new OnItemClickListener() {
             @Override
             public void onSimpleItemClick(BaseQuickAdapter adapter, View view, int position) {
-                Toast.makeText(getContext(), "点击了" + data.get(position).getHomeName(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getContext(), "点击了" + first.get(position).getYiji(), Toast.LENGTH_SHORT).show();
+
+                Intent contentIntent = new Intent(getContext(), ContentActivity.class);
+                contentIntent.putExtra("yiji", first.get(position));
+                startActivity(contentIntent);
             }
         });
 

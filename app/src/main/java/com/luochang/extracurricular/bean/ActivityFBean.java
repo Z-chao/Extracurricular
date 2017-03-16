@@ -1,10 +1,15 @@
 package com.luochang.extracurricular.bean;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Created by D on 2017/3/15.
  */
 
-public class ActivityFBean {
+public class ActivityFBean implements Parcelable {
+
+
 
     private String yiji;
 
@@ -60,4 +65,38 @@ public class ActivityFBean {
     public void setErji4(String erji4) {
         this.erji4 = erji4;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.yiji);
+        dest.writeString(this.erji1);
+        dest.writeString(this.erji2);
+        dest.writeString(this.erji3);
+        dest.writeString(this.erji4);
+    }
+
+    protected ActivityFBean(Parcel in) {
+        this.yiji = in.readString();
+        this.erji1 = in.readString();
+        this.erji2 = in.readString();
+        this.erji3 = in.readString();
+        this.erji4 = in.readString();
+    }
+
+    public static final Parcelable.Creator<ActivityFBean> CREATOR = new Parcelable.Creator<ActivityFBean>() {
+        @Override
+        public ActivityFBean createFromParcel(Parcel source) {
+            return new ActivityFBean(source);
+        }
+
+        @Override
+        public ActivityFBean[] newArray(int size) {
+            return new ActivityFBean[size];
+        }
+    };
 }

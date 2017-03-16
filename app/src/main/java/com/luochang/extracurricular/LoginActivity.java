@@ -12,8 +12,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.j256.ormlite.dao.Dao;
+import com.j256.ormlite.stmt.PreparedQuery;
 import com.j256.ormlite.stmt.QueryBuilder;
-import com.j256.ormlite.stmt.Where;
 import com.luochang.extracurricular.bean.UserBean;
 
 import java.sql.SQLException;
@@ -23,7 +23,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-import static android.icu.lang.UCharacter.GraphemeClusterBreak.L;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -57,7 +56,10 @@ public class LoginActivity extends AppCompatActivity {
                 DBHelper helper = DBHelper.getHelper(this);
                 try {
                     Dao dao = helper.getDao(UserBean.class);
-                    List<UserBean> account = dao.queryForEq("_account", userNamer);
+                    QueryBuilder queryBuilder = dao.queryBuilder();
+                    queryBuilder.where().eq(UserBean.ACCOUNT, userNamer);
+                    PreparedQuery prepare = queryBuilder.prepare();
+                    List<UserBean> account = dao.query(prepare);
                     if (account.size() == 0) {
                         Toast.makeText(this, "该用户不存在", Toast.LENGTH_SHORT).show();
                     } else {
@@ -70,6 +72,7 @@ public class LoginActivity extends AppCompatActivity {
                             if ( TextUtils.equals(passWord, passWord1)) {
                                 Intent mainIntent = new Intent(LoginActivity.this, MainActivity.class);
                                 startActivity(mainIntent);
+                                finish();
                             } else {
                                 Toast.makeText(this, "用户名或密码错误", Toast.LENGTH_SHORT).show();
                             }

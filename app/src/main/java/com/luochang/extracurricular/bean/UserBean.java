@@ -12,14 +12,17 @@ import com.j256.ormlite.table.DatabaseTable;
 public class UserBean {
 
 
+    public static final String USERNAME = "userName";
+    public static final String ACCOUNT = "account";
+    public static final String PASSWORD = "password";
 
-    @DatabaseField(columnName = "_userName",canBeNull = false)
+    @DatabaseField(columnName = USERNAME,canBeNull = false)
     private  String _userName;
 
-    @DatabaseField(canBeNull = false,id = true)
+    @DatabaseField(columnName = ACCOUNT,canBeNull = false,id = true)
     private String _account;
 
-    @DatabaseField(canBeNull = false)
+    @DatabaseField(columnName = PASSWORD,canBeNull = false)
     private String _passWord;
 
 

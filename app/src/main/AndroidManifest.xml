@@ -17,7 +17,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".LoginActivity" />
-        <activity android:name=".RegisteredActivity"></activity>
+        <activity android:name=".RegisteredActivity" />
+        <activity android:name=".ContentActivity" />
+        <activity android:name=".DetailedActivity" />
+        <activity android:name=".HuoDongActivity"></activity>
     </application>
 
 </manifest>

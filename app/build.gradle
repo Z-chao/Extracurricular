@@ -42,6 +42,6 @@ dependencies {
     compile 'com.j256.ormlite:ormlite-android:5.0'
 
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.8.6'
-
+    compile'com.android.support:design:23.2.0'
 
 }

@@ -9,10 +9,14 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.j256.ormlite.dao.Dao;
+import com.j256.ormlite.dao.GenericRawResults;
+import com.j256.ormlite.stmt.PreparedQuery;
+import com.j256.ormlite.stmt.QueryBuilder;
 import com.luochang.extracurricular.bean.UserBean;
 import com.luochang.extracurricular.bean.UserDao;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -34,6 +38,7 @@ public class RegisteredActivity extends AppCompatActivity {
 
     private DBHelper helper;
     private UserBean userBean;
+    private UserBean ifNotExists;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +54,7 @@ public class RegisteredActivity extends AppCompatActivity {
     public void onClick()  {
 
         try {
+            ifNotExists = null;
             Dao<UserBean, ?> dao = helper.getDao(UserBean.class);
             Log.i("zc", "onClick:      点击了注册");
             userBean = new UserBean();
@@ -67,10 +73,18 @@ public class RegisteredActivity extends AppCompatActivity {
             }
 
             if (TextUtils.equals(passWord, sure)) {
-               // UserDao userDao = new UserDao(this);
+
                 Log.i("zc", "onClick:        进入创建用户的方法");
-                int i = dao.create(new UserBean(userName, account, passWord));
-                Log.i("zc", "onClick:  ----------------" + i);
+                UserBean userBean = new UserBean(userName, account, passWord);
+
+                if (  !getDataByOrmlite(account)) {
+                    dao.create(userBean);
+                    Toast.makeText(this, "注册成功", Toast.LENGTH_SHORT).show();
+                    finish();
+                } else {
+                    Toast.makeText(this, "改账号 已被使用", Toast.LENGTH_SHORT).show();
+                }
+
 
             } else {
                 Toast.makeText(this, "两次输入的密码不正确", Toast.LENGTH_SHORT).show();
@@ -83,4 +97,32 @@ public class RegisteredActivity extends AppCompatActivity {
 
 
     }
+
+    /**
+     * 去数据库查询 主键
+     * @param account
+     */
+    private boolean getDataByOrmlite(String account) throws SQLException {
+
+        Dao<UserBean, String> dao = helper.getDao(UserBean.class);
+        QueryBuilder<UserBean, String> userBeanQueryBuilder = dao.queryBuilder();
+
+        userBeanQueryBuilder.where().eq(UserBean.ACCOUNT, account);
+        PreparedQuery<UserBean> prepare = userBeanQueryBuilder.prepare();
+
+        List<UserBean> query = dao.query(prepare);
+        Log.i("zc", "getDataByOrmlite:       数量" + query.size());
+        if (query.size() == 1) {
+            for (UserBean bean : query) {
+                Log.i("zc", "getDataByOrmlite:     有没有 这个用户" + bean.get_account());
+            }
+            return true;
+        } else {
+            return false;
+        }
+
+
+    }
+
+
 }
