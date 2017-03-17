@@ -25,18 +25,25 @@ public class HuoDongActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_huo_dong);
         ButterKnife.bind(this);
         initView();
     }
 
     private void initView() {
-        tb_data.setTabMode(TabLayout.MODE_SCROLLABLE);
-
+        tb_data.setTabMode(TabLayout.MODE_FIXED);
+        tb_data.setTabGravity(TabLayout.GRAVITY_FILL);
         setViewPagerData();
         MyPagerAdapter mAdapter = new MyPagerAdapter(mViewList,mTitleList);
         vp_data.setAdapter(mAdapter);
         tb_data.setupWithViewPager(vp_data);
+
+        boolean finish = getIntent().getBooleanExtra("finish", false);
+
+        if (finish) {
+            tb_data.getTabAt(1).select();
+        }
 
     }
 
