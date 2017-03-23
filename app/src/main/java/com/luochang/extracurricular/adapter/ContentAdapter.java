@@ -33,15 +33,7 @@ public class ContentAdapter extends BaseQuickAdapter<HomeBean,BaseViewHolder> {
         ImageView view = helper.getView(R.id.iv_im);
         Glide.with(mContext)
                 .load(item.getIma())
-                .asBitmap().diskCacheStrategy(DiskCacheStrategy.ALL).into(new BitmapImageViewTarget(view) {
-            @Override
-            protected void setResource(Bitmap resource) {
-                RoundedBitmapDrawable circularBitmapDrawable =
-                        RoundedBitmapDrawableFactory.create(mContext.getResources(), resource);
-                circularBitmapDrawable.setCircular(true);
-                view.setImageDrawable(circularBitmapDrawable);
-            }
-        });
+                .asBitmap().diskCacheStrategy(DiskCacheStrategy.ALL).into(view);
 
 
     }

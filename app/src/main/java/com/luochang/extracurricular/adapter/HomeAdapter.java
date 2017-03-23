@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
+import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.luochang.extracurricular.R;
@@ -29,9 +30,7 @@ public class HomeAdapter extends BaseQuickAdapter<HomeBean,BaseViewHolder> {
 
     public HomeAdapter(int layoutResId, List<HomeBean> data) {
         super(layoutResId, data);
-        this.data = data;
     }
-
 
 
     @Override
@@ -40,15 +39,7 @@ public class HomeAdapter extends BaseQuickAdapter<HomeBean,BaseViewHolder> {
         ImageView view = helper.getView(R.id.iv_im);
         Glide.with(mContext)
                 .load(item.getIma())
-                .asBitmap().diskCacheStrategy(DiskCacheStrategy.ALL).into(new BitmapImageViewTarget(view) {
-            @Override
-            protected void setResource(Bitmap resource) {
-                RoundedBitmapDrawable circularBitmapDrawable =
-                        RoundedBitmapDrawableFactory.create(mContext.getResources(), resource);
-                circularBitmapDrawable.setCircular(true);
-                view.setImageDrawable(circularBitmapDrawable);
-            }
-        });
+                .asBitmap().diskCacheStrategy(DiskCacheStrategy.ALL).into(view);
 
     }
 

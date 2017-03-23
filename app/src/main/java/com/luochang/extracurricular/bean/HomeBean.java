@@ -1,13 +1,20 @@
 package com.luochang.extracurricular.bean;
 
+import com.chad.library.adapter.base.entity.MultiItemEntity;
+
 /**
  * Created by D on 2017/3/15.
  */
 
-public class HomeBean {
+public class HomeBean  {
 
     private String homeName;
     private  Integer ima;
+    private int itemType;
+    public static final int TEXT = 1;
+    public static final int IMG = 2;
+    public static final int IMGS = 3;
+
 
     public HomeBean(String homeName, Integer ima) {
         this.homeName = homeName;
@@ -29,5 +36,8 @@ public class HomeBean {
     public void setIma(Integer ima) {
         this.ima = ima;
     }
+
+
+
 }
 

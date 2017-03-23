@@ -2,6 +2,7 @@ package com.luochang.extracurricular;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -13,10 +14,6 @@ import butterknife.OnClick;
 
 public class SplashActivity extends AppCompatActivity {
 
-    @BindView(R.id.bt_login)
-    Button btLogin;
-    @BindView(R.id.bt_registered)
-    Button btRegistered;
 
 
     @Override
@@ -25,24 +22,31 @@ public class SplashActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_splash2);
         ButterKnife.bind(this);
+        initData();
+        startMain();
+
+
+
+    }
+
+    private void initData() {
         DBHelper dbHelper = DBHelper.getHelper(this);
         dbHelper.getWritableDatabase();
     }
 
-    @OnClick({R.id.bt_login, R.id.bt_registered})
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.bt_login:
-                //登录的操作,点击跳转到 登录界面
-                Intent loginIntent = new Intent(SplashActivity.this, LoginActivity.class);
-                startActivity(loginIntent);
-                break;
-            case R.id.bt_registered:
-                //注册的操作, 点击跳转到注册界面
-                Intent registeredIntent = new Intent(SplashActivity.this, RegisteredActivity.class);
-                startActivity(registeredIntent);
-                break;
-        }
+
+    /**
+     * 延时操作 进入Main
+     */
+    private void startMain() {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                startActivity(new Intent(SplashActivity.this,MainActivity.class));
+                finish();
+            }
+        },2000);
+
     }
 
 
