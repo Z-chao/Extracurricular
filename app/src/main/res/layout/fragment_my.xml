@@ -44,6 +44,7 @@
             android:layout_height="80dp" />
 
         <TextView
+            android:id="@+id/tv_login"
             android:layout_marginTop="10dp"
             android:text="点我登录"
             android:textSize="15sp"
@@ -99,6 +100,7 @@
 
 
     <LinearLayout
+        android:id="@+id/ll_myjianli"
         android:gravity="center"
         android:orientation="horizontal"
         android:background="@color/white"
@@ -141,6 +143,7 @@
         android:layout_width="match_parent"
         android:layout_height="0.5dp" />
     <LinearLayout
+        android:id="@+id/ll_myhuodong"
         android:gravity="center"
         android:orientation="horizontal"
         android:background="@color/white"
@@ -182,6 +185,7 @@
         android:layout_width="match_parent"
         android:layout_height="0.5dp" />
     <LinearLayout
+        android:id="@+id/ll_myshoucang"
         android:gravity="center"
         android:orientation="horizontal"
         android:background="@color/white"
@@ -233,6 +237,7 @@
         android:layout_height="0.5dp" />
 
     <LinearLayout
+        android:id="@+id/ll_myyijian"
         android:gravity="center"
         android:orientation="horizontal"
         android:background="@color/white"

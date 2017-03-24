@@ -1,24 +1,20 @@
 package com.luochang.extracurricular;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
+import android.widget.ImageView;
+
+import com.luochang.extracurricular.bean.ActivityFBean;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
-import cn.bingoogolapple.bgabanner.BGABanner;
 
 public class DetailedActivity extends AppCompatActivity {
 
-    @BindView(R.id.banner_content)
-    BGABanner bannerContent;
-    @BindView(R.id.activity_detailed)
-    RelativeLayout activityDetailed;
-    @BindView(R.id.tv_join)
-    TextView tvJoin;
+
+    @BindView(R.id.iv_detail)
+    ImageView ivDetail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,14 +26,24 @@ public class DetailedActivity extends AppCompatActivity {
     }
 
     private void initView() {
+        ActivityFBean yiji = getIntent().getParcelableExtra("yiji");
+        int position = getIntent().getIntExtra("position", -1);
 
+        switch (position) {
+            case 0:
+                ivDetail.setImageResource(yiji.getSanji1());
+                break;
+            case 1:
+                ivDetail.setImageResource(yiji.getSanji2());
+                break;
+            case 2:
+                ivDetail.setImageResource(yiji.getSanji3());
+                break;
+            case 3:
+                ivDetail.setImageResource(yiji.getSanji4());
+                break;
+        }
 
-    }
-
-
-    @OnClick(R.id.tv_join)
-    public void onClick() {
-        startActivity(new Intent(DetailedActivity.this,HuoDongActivity.class));
 
     }
 

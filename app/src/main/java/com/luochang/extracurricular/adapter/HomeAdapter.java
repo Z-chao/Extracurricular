@@ -42,10 +42,4 @@ public class HomeAdapter extends BaseQuickAdapter<HomeBean,BaseViewHolder> {
                 .asBitmap().diskCacheStrategy(DiskCacheStrategy.ALL).into(view);
 
     }
-
-    
-
-
-
-
 }

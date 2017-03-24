@@ -153,6 +153,7 @@ public class MainActivity extends AppCompatActivity {
         ((ImageButton)llShoucang.findViewById(R.id.ib_shoucang)).setImageResource(R.mipmap.shoucang0);
         ((ImageButton)llUser.findViewById(R.id.ib_user)).setImageResource(R.mipmap.user0);
 
+
     }
 
 

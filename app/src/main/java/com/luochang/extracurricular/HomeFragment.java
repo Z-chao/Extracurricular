@@ -89,7 +89,6 @@ public class HomeFragment extends Fragment {
                 R.drawable.jingji,R.drawable.junshi,R.drawable.xueshulei,R.drawable.jianmo1,R.drawable.lishi1,R.drawable.jingji1,R.drawable.junshi1);
         first.add(xueshu);
 
-        //ActivityFBean junshi = new ActivityFBean("军事类", "定向越野", "军事沙龙", "射击", "国内外军事分析");
         ActivityFBean junshi = new ActivityFBean("军事类", "定向越野", "格斗", "射击", "国内外军事分析",R.drawable.yueye,R.drawable.gedou,
                 R.drawable.shej,R.drawable.fenxi,R.drawable.junshilei,R.drawable.yueye1,R.drawable.gedou1,R.drawable.shej1,R.drawable.fenxi1);
         first.add(junshi);

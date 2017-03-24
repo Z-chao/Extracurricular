@@ -47,7 +47,7 @@ public class ContentActivity extends AppCompatActivity {
         rvContent.setLayoutManager(new GridLayoutManager(this, 2));
 
 
-        ActivityFBean yiji = getIntent().getParcelableExtra("yiji");
+        final ActivityFBean yiji = getIntent().getParcelableExtra("yiji");
         List<HomeBean> data = new ArrayList<>();
         data.add(new HomeBean(yiji.getErji1(), yiji.getErjiImg1()));
         data.add(new HomeBean(yiji.getErji2(), yiji.getErjiImg2()));
@@ -63,6 +63,8 @@ public class ContentActivity extends AppCompatActivity {
             public void onSimpleItemClick(BaseQuickAdapter adapter, View view, int position) {
 
                 Intent intent = new Intent(ContentActivity.this, DetailedActivity.class);
+                intent.putExtra("yiji",yiji );
+                intent.putExtra("position", position);
                 startActivity(intent);
             }
         });

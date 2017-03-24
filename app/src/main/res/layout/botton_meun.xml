@@ -70,6 +70,31 @@
 
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/ll_news"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+
+            <ImageButton
+                android:id="@+id/ib_news"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/bottom_menu_btn"
+                android:clickable="false"
+                android:src="@mipmap/user1"
+                />
+
+            <TextView
+                android:text="News"
+                android:textColor="@color/black_overlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+        <LinearLayout
             android:id="@+id/ll_shoucang"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -120,6 +145,8 @@
                 android:layout_height="wrap_content" />
 
         </LinearLayout>
+
+
 
     </LinearLayout>
 

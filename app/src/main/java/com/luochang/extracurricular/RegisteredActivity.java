@@ -9,11 +9,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.j256.ormlite.dao.Dao;
-import com.j256.ormlite.dao.GenericRawResults;
 import com.j256.ormlite.stmt.PreparedQuery;
 import com.j256.ormlite.stmt.QueryBuilder;
 import com.luochang.extracurricular.bean.UserBean;
-import com.luochang.extracurricular.bean.UserDao;
+import com.zhy.android.percent.support.PercentLinearLayout;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -25,16 +24,16 @@ import butterknife.OnClick;
 public class RegisteredActivity extends AppCompatActivity {
 
 
-    @BindView(R.id.ed_userName)
-    EditText edUserName;
-    @BindView(R.id.ed_account)
-    EditText edAccount;
     @BindView(R.id.ed_passWord)
     EditText edPassWord;
     @BindView(R.id.ed_sure)
     EditText edSure;
     @BindView(R.id.bt_registered)
     Button btRegistered;
+    @BindView(R.id.ed_account)
+    EditText edAccount;
+    @BindView(R.id.activity_login)
+    PercentLinearLayout activityLogin;
 
     private DBHelper helper;
     private UserBean userBean;
@@ -51,21 +50,14 @@ public class RegisteredActivity extends AppCompatActivity {
 
 
     @OnClick(R.id.bt_registered)
-    public void onClick()  {
+    public void onClick() {
 
         try {
             ifNotExists = null;
             Dao<UserBean, ?> dao = helper.getDao(UserBean.class);
             Log.i("zc", "onClick:      点击了注册");
             userBean = new UserBean();
-            String userName = edUserName.getText().toString();
-            if (TextUtils.isEmpty(userName)) {
-                Toast.makeText(this, "用户名不能为空", Toast.LENGTH_SHORT).show();
-            }
-            String account = edAccount.getText().toString();
-            if (TextUtils.isEmpty(account)) {
-                Toast.makeText(this, "账号不能为空", Toast.LENGTH_SHORT).show();
-            }
+            String userName = edAccount.getText().toString();
             String passWord = edPassWord.getText().toString();
             String sure = edSure.getText().toString();
             if (TextUtils.isEmpty(passWord) && TextUtils.isEmpty(sure)) {
@@ -75,9 +67,9 @@ public class RegisteredActivity extends AppCompatActivity {
             if (TextUtils.equals(passWord, sure)) {
 
                 Log.i("zc", "onClick:        进入创建用户的方法");
-                UserBean userBean = new UserBean(userName, account, passWord);
+                UserBean userBean = new UserBean(userName, passWord);
 
-                if (  !getDataByOrmlite(account)) {
+                if (  !getDataByOrmlite(userName)) {
                     dao.create(userBean);
                     Toast.makeText(this, "注册成功", Toast.LENGTH_SHORT).show();
                     finish();
@@ -100,6 +92,7 @@ public class RegisteredActivity extends AppCompatActivity {
 
     /**
      * 去数据库查询 主键
+     *
      * @param account
      */
     private boolean getDataByOrmlite(String account) throws SQLException {
@@ -107,14 +100,14 @@ public class RegisteredActivity extends AppCompatActivity {
         Dao<UserBean, String> dao = helper.getDao(UserBean.class);
         QueryBuilder<UserBean, String> userBeanQueryBuilder = dao.queryBuilder();
 
-        userBeanQueryBuilder.where().eq(UserBean.ACCOUNT, account);
+        userBeanQueryBuilder.where().eq(UserBean.USERNAME, account);
         PreparedQuery<UserBean> prepare = userBeanQueryBuilder.prepare();
 
         List<UserBean> query = dao.query(prepare);
         Log.i("zc", "getDataByOrmlite:       数量" + query.size());
         if (query.size() == 1) {
             for (UserBean bean : query) {
-                Log.i("zc", "getDataByOrmlite:     有没有 这个用户" + bean.get_account());
+                Log.i("zc", "getDataByOrmlite:     有没有 这个用户" + bean.get_userName());
             }
             return true;
         } else {

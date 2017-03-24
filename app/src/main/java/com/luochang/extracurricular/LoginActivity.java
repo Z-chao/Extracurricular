@@ -30,10 +30,11 @@ public class LoginActivity extends AppCompatActivity {
     EditText edUserName;
     @BindView(R.id.ed_passWord)
     EditText edPassWord;
-    @BindView(R.id.tv_losword)
-    TextView tvLosword;
+
     @BindView(R.id.bt_login)
     Button btLogin;
+    @BindView(R.id.tv_reg)
+    TextView tvReg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,12 +43,9 @@ public class LoginActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.tv_losword, R.id.bt_login})
+    @OnClick({ R.id.bt_login})
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.tv_losword:
-                //忘记密码的操作
-                break;
             case R.id.bt_login:
                 // 登录的操作
                 String userNamer = edUserName.getText().toString();
@@ -57,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
                 try {
                     Dao dao = helper.getDao(UserBean.class);
                     QueryBuilder queryBuilder = dao.queryBuilder();
-                    queryBuilder.where().eq(UserBean.ACCOUNT, userNamer);
+                    queryBuilder.where().eq(UserBean.USERNAME, userNamer);
                     PreparedQuery prepare = queryBuilder.prepare();
                     List<UserBean> account = dao.query(prepare);
                     if (account.size() == 0) {
@@ -69,7 +67,7 @@ public class LoginActivity extends AppCompatActivity {
                         if (TextUtils.isEmpty(userNamer) && TextUtils.isEmpty(passWord)) {
                             Toast.makeText(this, "用户名或密码不能为空", Toast.LENGTH_SHORT).show();
                         } else {
-                            if ( TextUtils.equals(passWord, passWord1)) {
+                            if (TextUtils.equals(passWord, passWord1)) {
                                 Intent mainIntent = new Intent(LoginActivity.this, MainActivity.class);
                                 startActivity(mainIntent);
                                 finish();
@@ -87,4 +85,11 @@ public class LoginActivity extends AppCompatActivity {
                 break;
         }
     }
+
+    @OnClick(R.id.tv_reg)
+    public void onClick() {
+        startActivity(new Intent(LoginActivity.this,RegisteredActivity.class));
+    }
+
+
 }

@@ -13,22 +13,20 @@ public class UserBean {
 
 
     public static final String USERNAME = "userName";
-    public static final String ACCOUNT = "account";
     public static final String PASSWORD = "password";
 
     @DatabaseField(columnName = USERNAME,canBeNull = false)
     private  String _userName;
 
-    @DatabaseField(columnName = ACCOUNT,canBeNull = false,id = true)
-    private String _account;
+
 
     @DatabaseField(columnName = PASSWORD,canBeNull = false)
     private String _passWord;
 
 
-    public UserBean(String _userName, String _account, String _passWord) {
+    public UserBean(String _userName,  String _passWord) {
         this._userName = _userName;
-        this._account = _account;
+
         this._passWord = _passWord;
     }
 
@@ -47,13 +45,6 @@ public class UserBean {
         this._userName = _userName;
     }
 
-    public String get_account() {
-        return _account;
-    }
-
-    public void set_account(String _account) {
-        this._account = _account;
-    }
 
     public String get_passWord() {
         return _passWord;

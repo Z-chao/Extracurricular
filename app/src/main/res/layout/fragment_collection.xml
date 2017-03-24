@@ -1,153 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.android.percent.support.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-
-
-
+<LinearLayout
+    android:orientation="vertical"
+    app:layout_heightPercent="30%"
+    android:background="@color/colorAccent"
+    android:layout_width="match_parent"
+    android:layout_height="0dp">
     <ImageView
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:src="@mipmap/ic_launcher"
         />
 
-
-    <LinearLayout
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal"
-        android:gravity="center_horizontal"
+    <TextView
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:text="许桐 01022013001"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-
-            android:text="排名  :   13"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:layout_marginLeft="80dp"
-            android:text="积分  :   48"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-
-    </LinearLayout>
-
-
-    <View
-        android:layout_marginTop="30dp"
-        android:background="@color/colorAccent"
-        android:layout_width="wrap_content"
-        android:layout_height="2dp" />
-
-
-
-    <RelativeLayout
-        android:id="@+id/rl_coupons"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:background="@color/white"
-        android:orientation="horizontal"
-        android:padding="12dp">
-
-        <RadioButton
-            android:id="@+id/radioButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@null"
-            android:button="@null"
-            android:checked="false"
-            android:clickable="false"
-            android:drawablePadding="12dp"
-            android:gravity="center"
-            android:text="我的活动" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="50dp"
-            android:text="全部"
-            android:textColor="@color/gray"
-            android:drawableEnd="@mipmap/right"
-            android:drawableRight="@mipmap/right"
-            android:drawablePadding="20dp"
-             />
-
-
-    </RelativeLayout>
-
-
-
-
-    <LinearLayout
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center_horizontal"
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:id="@+id/iv_finish"
-            android:layout_marginRight="100dp"
-            android:src="@mipmap/aaaa"
-            android:layout_width="60dp"
-            android:layout_height="60dp" />
-
-        <ImageView
-            android:id="@+id/iv_unfinish"
-            android:src="@mipmap/aaaa"
-            android:layout_width="60dp"
-            android:layout_height="60dp" />
-
-    </LinearLayout>
-
-    <RelativeLayout
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@color/white"
-        android:orientation="horizontal"
-        android:padding="12dp">
-
-        <RadioButton
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@null"
-            android:button="@null"
-            android:checked="false"
-            android:clickable="false"
-            android:drawablePadding="12dp"
-            android:gravity="center"
-            android:text="我的消息" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="50dp"
-            android:text="全部"
-            android:textColor="@color/gray"
-            android:drawableEnd="@mipmap/right"
-            android:drawableRight="@mipmap/right"
-            android:drawablePadding="20dp"
-            />
-
-
-    </RelativeLayout>
-
-
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
+    <RelativeLayout
+
+        app:layout_heightPercent="20%"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <ImageView
+            android:id="@+id/iv_collimg"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/lanqiu"
+            android:layout_width="100dp"
+            android:layout_margin="10dp"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/tv_coll"
+            android:gravity="center"
+            android:layout_toRightOf="@+id/iv_collimg"
+            android:text="篮球俱乐部"
+            android:textSize="18sp"
+            android:layout_marginTop="30dp"
+            android:layout_centerInParent="true"
+            android:textColor="@color/black_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:src="@mipmap/ic_launcher"
+            android:id="@+id/iv_didian"
+            android:layout_width="15dp"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/iv_collimg"
+            android:layout_alignLeft="@+id/tv_coll"
+            android:layout_marginLeft="50dp"
+            android:layout_height="15dp" />
+
+        <TextView
+            android:id="@+id/tv_didian"
+            android:layout_toRightOf="@+id/iv_didian"
+            android:text="北操场"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <ImageView
+            android:src="@mipmap/ic_launcher"
+            android:id="@+id/iv_renshu"
+            android:layout_width="15dp"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/tv_didian"
+            android:layout_marginLeft="80dp"
+            android:layout_height="15dp" />
+
+        <TextView
+            android:layout_toRightOf="@+id/iv_renshu"
+            android:text="150"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+
+
+    </RelativeLayout>
+    <RelativeLayout
+
+        app:layout_heightPercent="20%"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <ImageView
+            android:id="@+id/iv_collimg1"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/yueye"
+            android:layout_width="100dp"
+            android:layout_margin="10dp"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/tv_coll1"
+            android:gravity="center"
+            android:layout_toRightOf="@+id/iv_collimg1"
+            android:text="定向越野俱乐部"
+            android:textSize="18sp"
+            android:layout_marginTop="30dp"
+            android:layout_centerInParent="true"
+            android:textColor="@color/black_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:src="@mipmap/ic_launcher"
+            android:id="@+id/iv_didian1"
+            android:layout_width="15dp"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/iv_collimg1"
+            android:layout_alignLeft="@+id/tv_coll1"
+            android:layout_marginLeft="50dp"
+            android:layout_height="15dp" />
+
+        <TextView
+            android:id="@+id/tv_didian1"
+            android:layout_toRightOf="@+id/iv_didian1"
+            android:text="北操场"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <ImageView
+            android:src="@mipmap/ic_launcher"
+            android:id="@+id/iv_renshu1"
+            android:layout_width="15dp"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/tv_didian1"
+            android:layout_marginLeft="80dp"
+            android:layout_height="15dp" />
+
+        <TextView
+            android:layout_toRightOf="@+id/iv_renshu1"
+            android:text="150"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+
+
+    </RelativeLayout>
+
+
+
+</com.zhy.android.percent.support.PercentLinearLayout>
