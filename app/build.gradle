@@ -44,4 +44,7 @@ dependencies {
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.8.6'
     compile'com.android.support:design:23.2.0'
 
+    //侧边导航导入
+    compile 'q.rorbin:VerticalTabLayout:1.2.2'
+
 }

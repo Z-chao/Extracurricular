@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_margin="5dp"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/iv_new"
+        android:src="@mipmap/ic_launcher"
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_newname"
+        android:layout_marginLeft="15dp"
+        android:text="某某教员"
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv_newtime"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text="下午 12 : 00"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_alignParentBottom="true"
+            android:id="@+id/tv_mesg"
+            android:layout_below="@+id/tv_newname"
+            android:layout_alignLeft="@+id/tv_newname"
+            android:layout_width="match_parent"
+            android:singleLine="true"
+            android:text="如果你无法简洁的表达你的想法,那只说明你还是啊实打实sad啊萨德爱的阿萨德阿萨德阿萨德撒的"
+            android:layout_height="wrap_content" />
+
+
+
+    </RelativeLayout>
+
+
+</com.zhy.android.percent.support.PercentLinearLayout>

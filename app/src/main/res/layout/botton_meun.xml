@@ -84,7 +84,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/bottom_menu_btn"
                 android:clickable="false"
-                android:src="@mipmap/user1"
+                android:src="@mipmap/new1"
                 />
 
             <TextView
