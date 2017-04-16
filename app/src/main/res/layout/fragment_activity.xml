@@ -8,12 +8,11 @@
 
     <q.rorbin.verticaltablayout.VerticalTabLayout
         android:id="@+id/tablayout"
-        android:layout_width="50dp"
+        android:layout_width="70dp"
         android:layout_height="match_parent"
         android:background="#EDEDED"
-        app:indicator_color="#FFFFFF"
-        app:tab_height="50dp"
-        app:tab_mode="scrollable" />
+        app:indicator_color="#FF7A43"
+        app:tab_mode="fixed" />
 
     <android.support.v4.view.ViewPager
         android:id="@+id/vp_vertical_ntb"
