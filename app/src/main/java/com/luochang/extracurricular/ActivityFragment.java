@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,9 +17,11 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import q.rorbin.verticaltablayout.VerticalTabLayout;
-import q.rorbin.verticaltablayout.adapter.TabAdapter;
+import q.rorbin.verticaltablayout.adapter.SimpleTabAdapter;
 import q.rorbin.verticaltablayout.widget.QTabView;
 import q.rorbin.verticaltablayout.widget.TabView;
+
+import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
 
 
 /**
@@ -41,8 +44,8 @@ public class ActivityFragment extends Fragment {
         if (view == null) {
             view = inflater.inflate(R.layout.fragment_activity, container, false);
         }
-        ButterKnife.bind(this, view);
         initView();
+        ButterKnife.bind(this, view);
         return view;
     }
 
@@ -55,41 +58,9 @@ public class ActivityFragment extends Fragment {
         first.add(new ActivityFBean("学术类", "数学建模", "中国历史", "经济论坛", "国内外军史"));
         first.add(new ActivityFBean("军事类", "定向越野", "军事沙龙", "射击", "国内外军事分析"));
 
-        //tablayout = new VerticalTabLayout(getContext());
+        tablayout = new VerticalTabLayout(getContext());
 
-        QTabView tabView = new QTabView(getContext());
-        tabView.setTitle(new TabView.TabTitle(new TabView.TabTitle.Builder().setContent("体育类")));
-        tablayout.addTab(tabView);
-        tablayout.setTabAdapter(new TabAdapter() {
-            @Override
-            public int getCount() {
-                return first.size();
-            }
-
-            @Override
-            public TabView.TabBadge getBadge(int position) {
-                return null;
-            }
-
-            @Override
-            public TabView.TabIcon getIcon(int position) {
-                return null;
-            }
-
-            @Override
-            public TabView.TabTitle getTitle(int position) {
-                TabView.TabTitle tabTitle = new TabView.TabTitle(new TabView.TabTitle.Builder().setContent(first.get(position).getYiji()));
-                return tabTitle;
-            }
-
-            @Override
-            public int getBackground(int position) {
-                return 0;
-            }
-        });
-
-
-
+        tablayout.addTab( new QTabView(getContext()));
 
     }
 }
