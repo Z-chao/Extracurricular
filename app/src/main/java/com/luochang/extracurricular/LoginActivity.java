@@ -68,7 +68,10 @@ public class LoginActivity extends AppCompatActivity {
                             Toast.makeText(this, "用户名或密码不能为空", Toast.LENGTH_SHORT).show();
                         } else {
                             if (TextUtils.equals(passWord, passWord1)) {
+                                //登陆成功的逻辑
                                 Intent mainIntent = new Intent(LoginActivity.this, MainActivity.class);
+                                //这个时候 记录下来 登陆成功的用户名
+                                SPUtils.putAndApply(LoginActivity.this,"userNamer",userNamer);
                                 startActivity(mainIntent);
                                 finish();
                             } else {
