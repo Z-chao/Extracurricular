@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_marginBottom="10dp"
+        android:layout_height="90dp">
+
+        <ImageView
+            android:id="@+id/iv_collimg"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="10dp"
+            android:src="@drawable/lanqiu" />
+
+        <TextView
+            android:id="@+id/tv_coll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="30dp"
+            android:layout_toRightOf="@+id/iv_collimg"
+            android:gravity="center"
+            android:text="篮球俱乐部"
+            android:textColor="@color/black_overlay"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/iv_didian"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignLeft="@+id/tv_coll"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/iv_collimg"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/tv_didian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/iv_didian"
+            android:text="北操场" />
+
+
+        <ImageView
+            android:id="@+id/iv_renshu"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="80dp"
+            android:layout_toRightOf="@+id/tv_didian"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/tv_renshu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/iv_renshu"
+            android:text="150" />
+
+
+    </RelativeLayout>
+
+    <View
+        android:background="#999999"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+</com.zhy.android.percent.support.PercentLinearLayout>

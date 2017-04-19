@@ -5,20 +5,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
-    <q.rorbin.verticaltablayout.VerticalTabLayout
-        android:id="@+id/tablayout"
-        android:layout_width="50dp"
-        android:layout_height="match_parent"
-        android:background="#EDEDED"
-        app:indicator_color="#FFFFFF"
-        app:tab_height="50dp"
-        app:tab_mode="scrollable" />
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/vp_vertical_ntb"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_activity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </LinearLayout>
