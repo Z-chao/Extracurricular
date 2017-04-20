@@ -75,6 +75,7 @@ public class ActivityFragment extends Fragment {
 
     }
 
+
     @Override
     public void onDestroyView() {
         super.onDestroyView();

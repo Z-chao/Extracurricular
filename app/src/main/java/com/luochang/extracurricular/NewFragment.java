@@ -8,17 +8,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-
 import com.luochang.extracurricular.adapter.NewFragmentAdapter;
 import com.luochang.extracurricular.bean.NewBean;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 /**
  * Created by D on 2017/3/27.
@@ -27,8 +22,7 @@ import butterknife.OnClick;
 public class NewFragment extends Fragment {
     @BindView(R.id.rv_new)
     RecyclerView rvNew;
-    @BindView(R.id.iv_friden)
-    ImageView ivFriden;
+
     private View view;
 
 
@@ -59,13 +53,5 @@ public class NewFragment extends Fragment {
 
     }
 
-    @OnClick(R.id.iv_friden)
-    public void onViewClicked() {
-        //点击跳转到通讯录的界面
 
-
-
-
-
-    }
 }

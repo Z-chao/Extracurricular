@@ -3,12 +3,17 @@ package com.luochang.extracurricular;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -40,6 +45,10 @@ public class MainActivity extends AppCompatActivity {
     ImageButton ibNews;
     @BindView(R.id.ll_news)
     LinearLayout llNews;
+    @BindView(R.id.mytext)
+    TextView mytext;
+    @BindView(R.id.iv_add)
+    ImageView ivAdd;
 
     private HomeFragment fg_home;
     private ActivityFragment fg_activity;
@@ -53,9 +62,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().hide();
+        // getSupportActionBar().hide();
+        // requestWindowFeature(Window.feature)
+        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setCustomView(R.layout.abs_layout);
+       /* ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayShowTitleEnabled(true);
+        actionBar.setTitle("课外活动");
+        actionBar.setHomeButtonEnabled(true);*/
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        // setSupportActionBar(tbMain);
         init();
     }
 
@@ -183,32 +200,47 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @OnClick({R.id.ll_home, R.id.ll_huodong, R.id.ll_shoucang, R.id.ll_user,R.id.ib_news, R.id.ll_news})
+    @OnClick({R.id.ll_home, R.id.ll_huodong, R.id.ll_shoucang, R.id.ll_user, R.id.ib_news, R.id.ll_news,R.id.iv_add})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ll_home:
                 //点击首页的操作
                 setTabSelection(0);
+                mytext.setText("课外活动");
+                ivAdd.setVisibility(View.INVISIBLE);
                 break;
             case R.id.ll_huodong:
                 //点击所有活动的操作
                 setTabSelection(1);
+                mytext.setText("课外活动");
+                ivAdd.setVisibility(View.INVISIBLE);
                 break;
             case R.id.ll_shoucang:
                 //点击我的活动的操作
                 setTabSelection(3);
+                mytext.setText("我的活动");
+                ivAdd.setVisibility(View.INVISIBLE);
                 break;
             case R.id.ll_user:
                 //点击了账号的操作
                 setTabSelection(4);
+                mytext.setText("课外活动");
+                ivAdd.setVisibility(View.INVISIBLE);
                 break;
             case R.id.ll_news:
                 //点击了我的消息的操作
                 setTabSelection(2);
+                mytext.setText("my  news");
+                ivAdd.setVisibility(View.VISIBLE);
                 break;
+            case R.id.iv_add:
+                //去通讯录
+                Toast.makeText(this, "去通讯录", Toast.LENGTH_SHORT).show();
+
+                break;
+
         }
     }
-
 
 
 }
